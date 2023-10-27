@@ -2,4 +2,4 @@ docs/_site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
-vendor
+**/assets/js/vendor
