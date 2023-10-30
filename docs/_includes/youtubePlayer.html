@@ -1,0 +1,10 @@
+<div class="embed-container embed-youtube">
+  <iframe
+      src="https://www.youtube-nocookie.com/embed/{{ include.id }}?start={{ include.start_time | default: 0 }}&amp;end={{ include.end_time | default: 9999 }}"
+      width="640"
+      height="360"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+  </iframe>
+</div>

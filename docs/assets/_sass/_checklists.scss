@@ -1,0 +1,26 @@
+table.checklist,
+table.checklist th,
+table.checklist td {
+    border: none;
+}
+
+table.checklist th {
+    border-bottom: 2px solid #cb4b16;
+    background-color: #eee8d5;
+}
+
+table.checklist td {
+    border-bottom: 1px solid #657b83;
+}
+
+table.checklist td.count {
+    padding-left: 2px;
+    padding-right: 8px;
+    vertical-align: top;
+    text-align: right;
+}
+
+table.checklist td.checkbox {
+    padding-left: 2px;
+    padding-right: 8px;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="main-container webpage">
+      <div class="main wrapper clearfix">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    <script src="{{ "/docs/assets/js/main.js" | prepend: site.baseurl }}"></script>
+
+  </body>
+
+</html>
