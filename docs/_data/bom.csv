@@ -1,0 +1,14 @@
+ID,ParentID,Name,Description,Quantity,UnitCost,Currency,Supplier,Link,Notes
+1,,Server 1,Main server for applications,1,1500,EUR,SuperTech,https://link-to-server-info,"RAM: 32GB, SSD: 1TB"
+2,1,RAM Module,DDR4 16GB RAM Module for Server 1,4,80,EUR,MemoryMasters,https://link-to-ram-info,"Brand: XYZ, Speed: 3200MHz"
+3,1,SSD,Samsung 1TB NVMe SSD for Server 1,1,120,EUR,DriveDepot,https://link-to-ssd-info,"Read Speed: 550MB/s, Write: 520MB/s"
+4,,Switch 1,Main network switch,1,250,EUR,NetworkNinjas,https://link-to-switch-info,"Ports: 24, Speed: 1Gbps"
+5,4,Ethernet Cable,Cat 6 Ethernet Cable,24,5,EUR,CableCrafters,https://link-to-cable-info,Length: 1m
+7,,Raspberry Pi Board,Raspberry Pi 4 Model B,1,35.00,EUR,Raspberry Pi Foundation,https://www.raspberrypi.org/products/raspberry-pi-4-model-b/,Main Raspberry Pi unit
+8,7,Power Supply,Official Raspberry Pi 4 Power Supply,1,10.00,EUR,Raspberry Pi Foundation,https://www.raspberrypi.org/products/type-c-power-supply/,For powering the Raspberry Pi
+9,7,MicroSD Card,16GB MicroSD Card (or larger),1,15.00,EUR,Various,Link to product page,For OS and storage
+10,7,Network Connection,Compatible Wi-Fi Dongle,1,10.00,EUR,Various,Link to product page,Optional for wireless connectivity
+11,7,Keyboard and Mouse,USB Keyboard and Mouse,1,20.00,EUR,Various,Link to product page,For initial setup
+12,7,Monitor and HDMI Cable,Monitor and HDMI Cable,1,50.00,EUR,Various,Link to product page,For initial setup (optional for headless use)
+13,7,Protective Case,Compatible Raspberry Pi Case,1,10.00,EUR,Various,Link to product page,For protecting the Raspberry Pi
+14,7,Power Button,Momentary Push-Button Switch,1,5.00,EUR,Various,Link to product page,Optional for power control

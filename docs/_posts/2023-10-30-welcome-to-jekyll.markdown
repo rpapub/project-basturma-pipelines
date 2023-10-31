@@ -11,7 +11,12 @@ You’ll find this post in your `_posts` directory. Go ahead and edit it and re-
 {{ category[0] }}
 {% endfor %}
 
+{% include bom.html parents="Server 1" %}
+
 {{ site.data.site_info.missionstatement.text }}
+
+{% include bom.html parents="Switch 1" %}
+{% include bom.html parents="Raspberry Pi Board" %}
 
 <p>
   {{ site.data.site_info.announcement.message }}
@@ -20,7 +25,7 @@ You’ll find this post in your `_posts` directory. Go ahead and edit it and re-
 
 ![]({{ site.baseurl}}/docs/assets/images/visual-identity/cprima_pipelines_valves_nodes_fe463353-c3ea-484c-a68c-21ad1189e24e.png){:class="resize"}
 
-{% include checklist.html checklistnames="sample checklist" heading="h3" %}
+{% include checklist.html checklistnames="Sample Checklist" heading="h3" %}
 
 Jekyll requires blog post files to be named according to the following format:
 
