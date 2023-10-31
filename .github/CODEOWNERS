@@ -1,0 +1,21 @@
+# The CODEOWNERS file specifies the individuals or teams responsible for specific
+# parts of this repository. When a pull request modifies parts of the codebase, the
+# specified code owners are automatically requested for review. This ensures that
+# relevant experts oversee the changes.
+#
+# In the event that multiple patterns match a file, the last matching pattern in the 
+# CODEOWNERS file takes precedence. It's important to order patterns carefully, keeping 
+# in mind that more specific patterns should generally be placed towards the end of the 
+# file to ensure they have higher precedence.
+#
+# Author: Christian Prior-Mamulyan (cprior@gmail.com)
+# Repository: https://github.com/rpapub/project-basturma-pipelines
+# LICENSE: CC-BY
+
+# Default Reviewer:
+# The @global-owner (either an individual or team) is designated as the default 
+# reviewer for changes to any file in the repository. If no other specific pattern 
+# matches the modified files, @global-owner will be requested for a review.
+*       @global-owner
+
+# [Other patterns and their owners can be added below]
