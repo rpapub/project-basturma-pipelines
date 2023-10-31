@@ -5,7 +5,7 @@
         <div class="header-container">
             <header class="wrapper clearfix">
                 <div class="title"><h1 id="title"><a href="{{ "/" | prepend: site.baseurl }}">{{ site.title | escape }}</a></h1>
-                    <p id="description">{{ site.description | escape }}</p></div>
+                    <p id="description">{{ site.data.site_info.missionstatement.text | escape }}</p></div>
                     <script>
                     lang = navigator.language || navigator.userLanguage;
                     var description = document.getElementById("description");

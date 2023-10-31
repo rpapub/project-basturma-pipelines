@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: '<Project[Basturma] version="Pipelines-v0.2" />'
+title: "<Project[BasturmaPipelines] />"
 email: cprior@gmail.com
 author: Christian Prior-Mamulyan
 description: >- # this means to ignore newlines until "baseurl:"
@@ -36,6 +36,12 @@ github_organization: rpapub
 plugins:
   - jekyll-feed
 timezone: Europe/Berlin
+# collections_dir removes docs from the categories list, permalink adds back
+# later defaults will re-defines the permalink for posts to /blog/…
+# may always be overwritten by frontmatter or defaults
+permalink: /docs/:year/:month/:day/:categories/:title:output_ext
+collections_dir: docs
+layout: "page"
 
 source: .
 layouts_dir: ./docs/_layouts
@@ -44,3 +50,20 @@ destination: ./docs/_site
 data_dir: ./docs/_data
 sass:
   sass_dir: ./docs/assets/_sass
+
+exclude:
+  - docs_
+  - foobar
+
+defaults:
+  - scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      layout: "post"
+      permalink: /blog/:year/:month/:day/:categories/:title:output_ext
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
