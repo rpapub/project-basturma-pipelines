@@ -48,3 +48,50 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]: https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
+
+{% assign csv_data = site.data.technology-components-physical %}
+
+<table class="checklist">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>category</th>
+      <th>name</th>
+      <th>description</th>
+      <th>vendor</th>
+      <th>version</th>
+      <th>source</th>
+      <th>productname</th>
+      <th>platform</th>
+      <th>licence</th>
+      <th>created_at</th>
+      <th>reviewed_at</th>
+      <th>retired_at</th>
+      <th>path</th>
+      <th>visibility</th>
+      <th>nickname</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in csv_data %}
+    <tr>
+      <td>{{ row.id }}</td>
+      <td>{{ row.category }}</td>
+      <td>{{ row.name }}</td>
+      <td>{{ row.description }}</td>
+      <td>{{ row.vendor }}</td>
+      <td>{{ row.version }}</td>
+      <td>{{ row.source }}</td>
+      <td>{{ row.productname }}</td>
+      <td>{{ row.platform }}</td>
+      <td>{{ row.licence }}</td>
+      <td>{{ row.created_at }}</td>
+      <td>{{ row.reviewed_at }}</td>
+      <td>{{ row.retired_at }}</td>
+      <td>{{ row.path }}</td>
+      <td>{{ row.visibility }}</td>
+      <td>{{ row.nickname }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
