@@ -3,3 +3,4 @@ docs/_site
 .jekyll-cache
 .jekyll-metadata
 **/assets/js/vendor
+bootstrap-5.3.2-examples
