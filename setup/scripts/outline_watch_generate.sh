@@ -40,6 +40,7 @@ while true; do
         # Run the Python script when a change is detected.
         python3 setup/scripts/generate_outline_md.py
         # Update the previous modification time.
+        sleep 2 #cooldown to prevent runaway loop after initial change
         prev_mtime=$current_mtime
     fi
 
