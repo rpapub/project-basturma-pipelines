@@ -32,6 +32,7 @@ foo
 ## 1.3 assembly - chapter
 ### 1.3.1 cable management - Section
 # 2 CI/CD UiPath RPA - part
+### 2.0.1 Introduction to CI/CD for UiPath RPA Projects: A Lifecycle Approach - Section
 ## 2.1 Dev - chapter
 ### 2.1.1 Code - Section
 Workflow Analyzer manually
