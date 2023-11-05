@@ -4,13 +4,14 @@ ID,key,parent_id,item,description,is_optional,quantity,unit_cost,currency,suppli
 3,,1,SSD,Samsung 1TB NVMe SSD for Server 1,,1,120,EUR,DriveDepot,https://link-to-ssd-info,"Read Speed: 550MB/s, Write: 520MB/s"
 4,,,Switch 1,Main network switch,,1,250,EUR,NetworkNinjas,https://link-to-switch-info,"Ports: 24, Speed: 1Gbps"
 5,,4,Ethernet Cable,Cat 6 Ethernet Cable,,24,5,EUR,CableCrafters,https://link-to-cable-info,Length: 1m
-7,RPi4,,Raspberry Pi Board,Raspberry Pi 4 Model B 8GB,,1,35.00,EUR,Raspberry Pi Foundation,https://www.raspberrypi.org/products/raspberry-pi-4-model-b/,Main Raspberry Pi unit
-8,RPiPSU,7,Power Supply,Official Raspberry Pi 4 Power Supply,,1,10.00,EUR,Raspberry Pi Foundation,https://www.raspberrypi.org/products/type-c-power-supply/,For powering the Raspberry Pi
-9,MSCARD,7,MicroSD Card,16GB MicroSD Card (or larger),,1,15.00,EUR,Various,Link to product page,For OS and storage
-10,WIFIDONGLE,7,Network Connection,Compatible Wi-Fi Dongle,true,1,10.00,EUR,Various,Link to product page,Optional for wireless connectivity
-11,KEYBOARD,7,USB Keyboard,USB Keyboard,true,1,20.00,EUR,Various,Link to product page,For initial setup
-12,MOUSE,7,USB Mouse,USB Mouse,true,1,20.00,EUR,Various,Link to product page,For initial setup
-13,MONITOR,7,Monitor,Monitor,true,1,50.00,EUR,Various,Link to product page,For initial setup (optional for headless use)
-14,HDMICABLE,7,HDMI Cable,HDMI Cable,true,1,50.00,EUR,Various,Link to product page,For initial setup (optional for headless use)
-15,RPiCASE,7,Protective Case,Compatible Raspberry Pi Case,,1,10.00,EUR,Various,Link to product page,For protecting the Raspberry Pi
-16,RPiPushButton,7,Power Button,Momentary Push-Button Switch,,1,5.00,EUR,Various,Link to product page,Optional but recommended for power control
+7,RPi4,,Raspberry Pi Board,Raspberry Pi 4 Model B 8GB,,1,90,EUR,Raspberry Pi Foundation,https://www.raspberrypi.org/products/raspberry-pi-4-model-b/,Main Raspberry Pi unit
+8,RPi4PSU,7,Power Supply,"For the Raspberry Pi 4 high quality power supply with stable 5V and 3 – 4 A per Raspberry Pi board, e.g. MEANWELL LRS-50-5",,1,20,EUR,MEAN WELL,https://www.meanwell.com/productPdf.aspx?i=399,
+9,MSCARD,7,MicroSD Card,16GB MicroSD Card (or larger),,1,15.00,EUR,Various,,For OS and storage
+10,WIFIDONGLE,7,Network Connection,Compatible Wi-Fi Dongle,true,1,10.00,EUR,Various,,Optional for wireless connectivity
+11,KEYBOARD,7,USB Keyboard,USB Keyboard,true,1,20.00,EUR,Various,,For initial setup
+12,MOUSE,7,USB Mouse,USB Mouse,true,1,20.00,EUR,Various,,For initial setup
+13,MONITOR,7,Monitor,Monitor,true,1,50.00,EUR,Various,,For initial setup (optional for headless use)
+14,MICROHDMICABLE,7,Micro HDMI Cable,Micro HDMI (Type D) connector on one end,true,1,50.00,EUR,Various,,For initial setup (optional for headless use)
+15,RPiCASE,7,Protective Case,Compatible Raspberry Pi Case,,1,10.00,EUR,Various,,For protecting the Raspberry Pi
+16,RPiPushButton,7,Power Button,Momentary Push-Button Switch,,1,5.00,EUR,Various,,Optional but recommended for power control
+17,MSDCARDREADER,7,MicroSD Card Reader,To write onto the SD card,,,,,,,

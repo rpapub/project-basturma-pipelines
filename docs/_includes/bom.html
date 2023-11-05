@@ -51,7 +51,15 @@
     <td class="align-right">{% if prepend_symbol %}{{ currency_symbol }}{% endif %}{{ clean_parent_unitcost }}{% unless prepend_symbol %}{{ currency_symbol }}{% endunless %}</td>
     <td class="align-right">{% if prepend_symbol %}{{ currency_symbol }}{% endif %}{{ parent_total_cost }}{% unless prepend_symbol %}{{ currency_symbol }}{% endunless %}</td>
     <td>{{ parent.supplier }}</td>
-    <td><a href="{{ parent.link }}" target="_blank">More Info</a></td>
+    
+
+<td>
+  {% if parent.link | url_validate %}
+    <a href="{{ parent.link }}" target="_blank">More Info</a>
+  {% endif %}
+</td>
+
+
     <td>{{ parent.notes }}</td>
   </tr>
 
@@ -84,7 +92,11 @@
     <td class="align-right">{% if child.is_optional == "true" %}({% endif %}{% if prepend_symbol_child %}{{ currency_symbol_child }}{% endif %}{{ clean_child_unitcost }}{% unless prepend_symbol_child %}{{ currency_symbol_child }}{% endunless %}{% if child.is_optional == "true" %}){% endif %}</td>
     <td class="align-right">{% if child.is_optional == "true" %}({% endif %}{% if prepend_symbol_child %}{{ currency_symbol_child }}{% endif %}{{ child_total_cost_for_all_parents }}{% unless prepend_symbol_child %}{{ currency_symbol_child }}{% endunless %}{% if child.is_optional == "true" %}){% endif %}</td>
     <td>{{ child.supplier }}</td>
-    <td><a href="{{ child.link }}" target="_blank">More Info</a></td>
+    <td>
+      {% if child.link | url_validate %}
+        <a href="{{ child.link }}" target="_blank">More Info</a>
+      {% endif %}
+    </td>
     <td>{{ child.notes }}</td>
   </tr>
 
