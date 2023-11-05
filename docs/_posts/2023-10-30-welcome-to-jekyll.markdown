@@ -15,8 +15,14 @@ You’ll find this post in your `_posts` directory. Go ahead and edit it and re-
 
 {{ site.data.site_info.missionstatement.text }}
 
+## BOM
+
 {% include bom.html parents="Switch 1" %}
 {% include bom.html parents="Raspberry Pi Board" %}
+
+## Requirements
+
+{% include requirements.html doc_refs="foo" %}
 
 <p>
   {{ site.data.site_info.announcement.message }}
