@@ -32,6 +32,9 @@ file_to_watch="docs/_data/outline.csv"
 # Interval between checks, in seconds.
 poll_interval=1
 
+# Grace interval in seconds.
+grace_interval=4
+
 # Check if the file exists before starting.
 if [[ ! -f "$file_to_watch" ]]; then
     echo "The file $file_to_watch does not exist."
@@ -57,13 +60,13 @@ while true; do
     current_mtime=$(get_last_mod_time "$file_to_watch")
     debug_log "Current mtime: $current_mtime, Previous mtime: $prev_mtime"
 
-    if [[ "$current_mtime" -ne "$prev_mtime" ]]; then
-        debug_log "Change detected in ${file_to_watch}."
+    # Compare if current mtime is fresher than previous mtime plus the grace interval.
+    if [[ "$current_mtime" -gt "$((prev_mtime + grace_interval))" ]]; then
+        debug_log "Change detected in ${file_to_watch} after grace interval."
         # Run the Python script when a change is detected.
         python3 setup/scripts/generate_outline_md.py
         debug_log "Ran the Python script to generate markdown."
         # Update the previous modification time.
-        sleep 2 #cooldown to prevent runaway loop after initial change
         prev_mtime=$current_mtime
     fi
 

@@ -5,7 +5,7 @@ title: "Outline"
 ## 0.1 Foreword - chapter
 # 1 homelab - part
 ### 1.0.1 motivation - Section
-foo
+when in Rhsn without access to Jenkins node: standstill
 
 ### 1.0.2 Incremental Homelab Iterations - Section
 #### 1.0.2.1 costs - Subsection
@@ -71,7 +71,7 @@ import to SonarQube
 ### 2.1.3 Test - Section
 Canary
 
-
+bar
 
 ## 2.2 Ops - chapter
 ### 2.2.1 Release - Section
