@@ -31,6 +31,9 @@ when in Rhsn without access to Jenkins node: standstill
 ### 1.2.2 system management - Section
 ## 1.3 assembly - chapter
 ### 1.3.1 cable management - Section
+## 1.4 base system installation - chapter
+## 1.5 application installation - chapter
+## 1.6 operational setup - chapter
 # 2 CI/CD UiPath RPA - part
 ### 2.0.1 Introduction to CI/CD for UiPath RPA Projects: A Lifecycle Approach - Section
 ## 2.1 Dev - chapter
