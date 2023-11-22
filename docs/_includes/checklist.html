@@ -1,11 +1,17 @@
 
+{% if include.checklistnames and include.checklistnames != "" %}
+{% assign checklistnames = include.checklistnames | split: "," %}
+{% else %}
+{% assign checklistnames = include.checklistsarray %}
+{% endif %}
+
 {% if include.heading.size > 1 %}
 {% assign heading = include.heading | strip %}
 {% else %}
 {% assign heading = "h2" %}
 {% endif %}
 
-{% assign checklistnames = include.checklistnames | split: "," %}
+
 {% assign checklistcount = 0 %}
 
 {% for checklistname in checklistnames %}
