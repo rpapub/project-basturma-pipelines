@@ -14,4 +14,5 @@ ID,ParentID,ItemType,Name,Description,Quantity,UnitCost,Currency,Supplier,Link,N
 14,15,Component,Power Button,Momentary Push-Button Switch,1,5.00,EUR,Various,,Optional for power control
 15,,,homelab,test,1,,EUR,,,
 16,15,Tool,foo,bar,,,,,,
-17,,Consumable,foo,baz,,,,,,
+17,15,Consumable,foo,baz,,,,,,
+18,15,Component,DC 5525 barrel jack,5.5 x 2.5mm,1,3.5,EUR,Delock,https://www.delock.com/produkt/65488/merkmale.html,"Positive pole inside, negative pole outside"
