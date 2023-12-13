@@ -1,0 +1,36 @@
+name: Run Tests on PowerShell Sample Scripts with Pester
+
+on:
+  push:
+    paths:
+      - "powershell/**"
+  pull_request:
+    paths:
+      - "powershell/**"
+  workflow_dispatch:
+
+jobs:
+  pester-test-windows:
+    name: Pester Test Runner on Windows
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run Pester Tests
+        run: |
+          cd powershell
+          Invoke-Pester .\tests -Output Detailed
+
+  pester-test-ubuntu:
+    name: Pester Test Runner on Ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run Pester Tests
+        run: |
+          pwsh -Command "cd powershell; Invoke-Pester ./tests -Output Detailed"

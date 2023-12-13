@@ -1,5 +1,7 @@
 # PowerShell Scripts for Project Basturma - CI/CD Pipelines for UiPath RPA
 
+[![Run Tests on PowerShell Sample Scripts with Pester](https://github.com/rpapub/project-basturma-pipelines/actions/workflows/powershell-sample-scripts-test.yml/badge.svg)](https://github.com/rpapub/project-basturma-pipelines/actions/workflows/powershell-sample-scripts-test.yml)
+
 ## Introduction
 
 Welcome to the PowerShell scripts section of the Project Basturma repository! This directory is focused on providing PowerShell tools and scripts that support the development and deployment of UiPath Robotic Process Automation (RPA) within CI/CD pipelines. Our aim is to facilitate the automation processes within UiPath RPA projects, ensuring that they are efficient, consistent, and seamlessly integrated into the broader CI/CD pipeline.
@@ -29,7 +31,7 @@ To get started with Project Basturma, clone this repository to your local machin
 
 ```bash
 git clone https://github.com/rpapub/project-basturma-pipelines.git
-cd project-basturma-pipelines/scripts/powershell
+cd project-basturma-pipelines/powershell
 ```
 
 ## PowerShell Modules
