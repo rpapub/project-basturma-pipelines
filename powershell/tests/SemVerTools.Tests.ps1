@@ -1,5 +1,8 @@
 # Import the SemVerTools module
-Import-Module .\src\SemVerTools\SemVerTools.psm1 -Force
+& {
+    $WarningPreference = 'SilentlyContinue'
+    Import-Module .\src\SemVerTools\SemVerTools.psm1 -Force
+}
 
 Describe "SemVerTools Module Tests" {
     Context "Increment-SemVer Function" {
