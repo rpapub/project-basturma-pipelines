@@ -5,7 +5,7 @@ Describe "Update-XamlAttribute Tests" {
             # Import the UiPathProjectTools module
             & {
                 $WarningPreference = 'SilentlyContinue'
-                Import-Module .\src\UiPathProjectTools\UiPathProjectTools.psd1 -Force
+                Import-Module .\src\UiPathCicdScripts\UiPathCicdScripts.psd1 -Force
             }
 
             # Define paths for test assets
@@ -47,7 +47,7 @@ Describe "Update-XamlAttribute Tests" {
             if (Test-Path $tempTestPath) {
                 Remove-Item -Path $tempTestPath
             }
-            Remove-Module UiPathProjectTools
+            Remove-Module UiPathCicdScripts
         }
     }
 }
