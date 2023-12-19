@@ -15,7 +15,7 @@ This example updates the 'ConfigFile' attribute of the 'Activity' element in the
 None. This function does not return any output, but it outputs messages to the host regarding the status of the update operation.
 
 .NOTES
-Version:        1.0
+Version:        0.5.0
 Author:         Christian Prior-Mamulyan
 Creation Date:  2023-12-01
 License:        CC-BY
@@ -63,7 +63,8 @@ function Update-XamlAttribute {
             # Save the changes back to the XAML file
             $xamlContent.Save($xamlPath)
             # Write-Host "XAML file updated successfully. '$targetAttribute' set to: $newValue"
-        } else {
+        }
+        else {
             Write-Warning "'$targetAttribute' attribute not found in the XAML file."
         }
     }
