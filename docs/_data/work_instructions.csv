@@ -1,0 +1,7 @@
+InstructionSetID,InstructionSetTitle,StepID,Instruction,ToolsRequired,MaterialsRequired,EstimatedTime,Precautions,QualityChecks
+101,"Assembly of Device A",1,Attach base to frame,"Screwdriver, Wrench","Base, Frame",10 min,"Ensure alignment is correct",Check for stability
+101,"Assembly of Device A",2,Connect wiring harness,"Pliers, Wire strippers","Wiring harness",5 min,"Avoid wire stripping errors",Ensure secure connections
+101,"Assembly of Device A",3,Test electrical output,"Multimeter",,3 min,"Use insulated gloves",Correct voltage and current
+102,"Maintenance of Device B",1,Power down device,"Safety gloves",,5 min,"Confirm power-off status",Visual inspection of power off
+102,"Maintenance of Device B",2,Clean air filters,"Brush, Compressed air","Air filters",15 min,"Wear a dust mask",No dust or debris on filters
+102,"Maintenance of Device B",3,Inspect belts for wear,"Flashlight","Belts",5 min,"Beware of sharp edges",No visible cracks or fraying

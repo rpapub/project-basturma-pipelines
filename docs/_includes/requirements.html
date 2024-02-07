@@ -1,0 +1,32 @@
+{% comment %}
+requirements.html - Jekyll include to display requirements
+Parameters:
+  - doc_refs: Comma-separated list of document references
+{% endcomment %}
+
+{% assign doc_refs = include.doc_refs | split: ',' %}
+
+{% for doc_ref in doc_refs %}
+  <!-- <h3>{{ doc_ref }}</h3> //-->
+  <ul>
+    {% assign requirements = site.data.requirements | where: "doc_ref", doc_ref %}
+    {% if requirements.size > 0 %}
+      {% for requirement in requirements %}
+        <li>
+          {% if requirement.bom_key %}
+            {% assign bom = site.data.bom | where: "key", requirement.bom_key | first %}
+            {% if bom %}
+              <strong>{% if bom.is_optional == "true" %}optional: {% endif %}{{ bom.item | default: requirement.item }}:</strong> {{ requirement.description | default: bom.description }}
+            {% else %}
+              <strong>{% if requirement.is_optional == "true" %}optional: {% endif %}{{ requirement.item }}</strong>: {{ requirement.description }}
+            {% endif %}
+          {% else %}
+            <strong>[check] {% if requirement.is_optional == "true" %}optional: {% endif %}{{ requirement.item }}</strong>: {{ requirement.description }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    {% else %}
+      <li>No requirements found for {{ doc_ref }}</li>
+    {% endif %}
+  </ul>
+{% endfor %}

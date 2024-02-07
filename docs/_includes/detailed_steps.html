@@ -1,0 +1,33 @@
+{% comment %}
+  Include for displaying detailed steps for a guide.
+  Expects a 'title' parameter to match with the 'title' column in the detailed_steps_data.csv.
+{% endcomment %}
+
+{% assign steps = site.data.detailed_steps_data | where: "title", include.title %}
+
+{% if steps.size > 0 %}
+  <ol class="guide-steps">
+    {% for step in steps %}
+      <li class="step">
+        <h3 class="step-title">{{ step.action }}</h3>
+        {% if step.command %}
+          <pre><code>{{ step.command }}</code></pre>
+        {% endif %}
+        {% if step.description %}
+          <p>{{ step.description }}</p>
+        {% endif %}
+        {% if step.image %}
+          <img src="{{ step.image }}" alt="Step Illustration">
+        {% endif %}
+        {% if step.note %}
+          <p class="note">{{ step.note }}</p>
+        {% endif %}
+        {% if step.verification %}
+          <p class="verification">{{ step.verification }}</p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+{% else %}
+  <p>No detailed steps found for the guide titled "{{ include.title }}".</p>
+{% endif %}
