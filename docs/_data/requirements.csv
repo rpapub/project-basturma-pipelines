@@ -1,0 +1,12 @@
+id,doc_ref,item,bom_key,description,is_optional,source,notes
+1,foo,Raspberry Pi 4,RPi4,Single-board computer,,,
+2,foo,MicroSD Card,MSDCARD,8GB or larger,,,
+3,foo,MicroSD Card Reader,MSDCARDREADER,To write the DietPi image onto the SD card,,,
+4,foo,Computer,PC,Windows/macOS/Linux to flash the SD card,,,
+5,foo,DietPi Image,DIETPIIMG,DietPi image for Raspberry Pi 4,,DietPi Website,
+6,foo,Power Supply,RPi4PSU,,,,
+7,foo,Monitor,MONITOR,For the initial setup,,,
+8,foo,Keyboard,KEYBOARD,For the initial setup,,,
+9,foo,Mouse,MOUSE,For the initial setup,,,
+10,foo,Wi-Fi Network Credentials,CRED_WIFI,SSID and Password,true,,
+11,foo,Micro HDMI Cable,MICROHDMICABLE,,,,

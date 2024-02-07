@@ -1,0 +1,25 @@
+{% assign tabList = include.tabs | split: "," %}
+
+<div class="inline-tabs">
+    {% for tab in tabList %}
+    {% assign internal_tab = tab | downcase %}
+    {% assign language = site.data.language_mapping[internal_tab] %}
+    <div class="inline-tab-button {% if forloop.first %}active-tab{% endif %}" onclick="showContent('{{ include.id }}-{{ internal_tab }}')">{{ language.label }}</div>
+    {% endfor %}
+</div>
+
+{% for tab in tabList %}
+{% assign internal_tab = tab | downcase %}
+{% assign language = site.data.language_mapping[internal_tab] %}
+{% capture file_content %}{% include_relative _code_samples/{{ include.id }}-{{ internal_tab }}.{{ language.extension }} %}{% endcapture %}
+
+<div id="{{ include.id }}-{{ internal_tab }}" class="inline-tab-content {% if forloop.first %}active-content{% endif %}">
+    {% if language.highlight %}
+        {% highlight {{ language.highlight }} %}
+        {{ file_content }}
+        {% endhighlight %}
+    {% else %}
+        <pre>{{ file_content | escape }}</pre>
+    {% endif %}
+</div>
+{% endfor %}

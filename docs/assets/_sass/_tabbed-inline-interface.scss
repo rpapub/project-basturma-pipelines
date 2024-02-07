@@ -1,0 +1,28 @@
+.inline-tabs {
+    display: inline-flex;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.inline-tab-button {
+    padding: 5px 10px;
+    background-color: #f1f1f1;
+}
+
+.active-tab {
+    background-color: #ddd;
+}
+
+.inline-tab-content {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.active-content {
+    display: block;
+}

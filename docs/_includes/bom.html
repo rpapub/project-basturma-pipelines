@@ -1,0 +1,103 @@
+<style type="text/css">
+    td.align-right {
+        text-align: right;
+        padding-right: 3px !important; 
+    }
+        .padded td, .padded th {
+            padding: 1px;
+        }
+</style>
+
+{% assign filtered_parents = include.parents | default: nil | split: ", " %}
+{% assign running_total = 0 %}
+{% for desired_parent in filtered_parents %}
+{% for parent in site.data.bom %}
+{% if parent.ParentID == nil and parent.Name == desired_parent %}
+
+<!-- Clean and calculate parent's total cost -->
+{% assign clean_parent_quantity = parent.Quantity | remove: "," %}
+{% assign clean_parent_unitcost = parent.UnitCost | remove: "," | remove: "€" | remove: "$" | split: "." | first %}
+{% assign parent_total_cost = clean_parent_quantity | times: clean_parent_unitcost %}
+{% assign running_total = running_total | plus: parent_total_cost %}
+
+<!-- Determine Currency Symbol for parent -->
+{% if parent.Currency == "EUR" %}
+{% assign currency_symbol = "€" %}
+{% assign prepend_symbol = false %}
+{% elsif parent.Currency == "USD" %}
+{% assign currency_symbol = "$" %}
+{% assign prepend_symbol = true %}
+{% endif %}
+
+<h2>{{ parent.Name }}</h2>
+
+
+<table border="1" class="checklist padded">
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Quantity</th>
+    <th>Unit Cost</th>
+    <th>Total Cost</th>
+    <th>Supplier</th>
+    <th>Link</th>
+    <th>Notes</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>{{ parent.Name }}</td>
+    <td>{{ parent.Description }}</td>
+    <td class="align-right">{{ clean_parent_quantity }}</td>
+    <td class="align-right">{% if parent.UnitCost | default: "" != "" %}{% if prepend_symbol %}{{ currency_symbol }}{% endif %}{{ clean_parent_unitcost }}{% unless prepend_symbol %}{{ currency_symbol }}{% endunless %}{% endif %}</td>
+    <td class="align-right">{% if parent.UnitCost | default: "" != "" %}{% if prepend_symbol %}{{ currency_symbol }}{% endif %}{{ parent_total_cost }}{% unless prepend_symbol %}{{ currency_symbol }}{% endunless %}{% endif %}</td>
+    <td>{{ parent.Supplier }}</td>
+    <td><a href="{% if parent.Link | default: "" != "" %}{{ parent.Link }}{% endif %}" target="_blank">More Info</a></td>
+    <td>{{ parent.Notes }}</td>
+  </tr>
+
+{% for child in site.data.bom %}
+{% if child.ParentID == parent.ID %}
+
+<!-- Clean and calculate child's total cost -->
+{% assign clean_child_quantity = child.Quantity | remove: "," %}
+{% assign clean_child_unitcost = child.UnitCost | remove: "," | remove: "€" | remove: "$" | split: "." | first %}
+{% assign child_total_cost_per_unit = clean_child_quantity | times: clean_child_unitcost %}
+{% assign child_total_cost_for_all_parents = child_total_cost_per_unit | times: clean_parent_quantity %}
+{% assign running_total = running_total | plus: child_total_cost_for_all_parents %}
+
+<!-- Determine Currency Symbol for child -->
+{% if child.Currency == "EUR" %}
+{% assign currency_symbol_child = "€" %}
+{% assign prepend_symbol_child = false %}
+{% elsif child.Currency == "USD" %}
+{% assign currency_symbol_child = "$" %}
+{% assign prepend_symbol_child = true %}
+{% endif %}
+
+  <tr>
+    <td>{{ child.Name }}</td>
+    <td>{{ child.Description }}</td>
+    <td class="align-right">{{ clean_child_quantity | times: clean_parent_quantity }}</td>
+    <td class="align-right">{% if prepend_symbol_child %}{{ currency_symbol_child }}{% endif %}{{ clean_child_unitcost }}{% unless prepend_symbol_child %}{{ currency_symbol_child }}{% endunless %}</td>
+    <td class="align-right">{% if prepend_symbol_child %}{{ currency_symbol_child }}{% endif %}{{ child_total_cost_for_all_parents }}{% unless prepend_symbol_child %}{{ currency_symbol_child }}{% endunless %}</td>
+    <td>{{ child.Supplier }}</td>
+    <td><a href="{{ child.Link }}" target="_blank">More Info</a></td>
+    <td>{{ child.Notes }}</td>
+  </tr>
+
+{% endif %}
+{% endfor %}
+</tbody>
+</table>
+
+<p>
+  <strong>Total Cost for {{ desired_parent }}:</strong> {% if prepend_symbol %}{{ currency_symbol }}{% endif %}{{ running_total }}{% unless prepend_symbol %}{{ currency_symbol }}{% endunless %}
+</p>
+
+{% assign running_total = 0 %}
+
+{% endif %}
+{% endfor %}
+{% endfor %}

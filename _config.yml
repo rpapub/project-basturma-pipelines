@@ -1,0 +1,69 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: "<Project[BasturmaPipelines] />"
+email: cprior@gmail.com
+author: Christian Prior-Mamulyan
+description: >- # this means to ignore newlines until "baseurl:"
+  In the continuous cycle of DevOps, where every iteration matters,
+  `<Project[Basturma] />` serves as a template for excellence,
+  ensuring every UiPath RPA project meets the gold standard in code quality.
+baseurl: "/project-basturma-pipelines" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+github_username: rpapub
+github_repo: project-basturma-pipelines
+github_organization: rpapub
+
+# Build settings
+#theme: minima
+plugins:
+  - jekyll-feed
+timezone: Europe/Berlin
+# collections_dir removes docs from the categories list, permalink adds back
+# later defaults will re-defines the permalink for posts to /blog/…
+# may always be overwritten by frontmatter or defaults
+permalink: /docs/:year/:month/:day/:categories/:title:output_ext
+collections_dir: docs
+layout: "page"
+
+source: .
+layouts_dir: ./docs/_layouts
+includes_dir: ./docs/_includes
+destination: ./docs/_site
+data_dir: ./docs/_data
+sass:
+  sass_dir: ./docs/assets/_sass
+
+exclude:
+  - docs_
+  - foobar
+
+defaults:
+  - scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      layout: "post"
+      permalink: /blog/:year/:month/:day/:categories/:title:output_ext
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"

@@ -1,0 +1,13 @@
+title,step,action,command,visual,note
+"Setting up a Home Network",1,Identify your network requirements,"speedtest-cli",network-diagram.png,"Consider future scalability."
+"Setting up a Home Network",2,Choose appropriate hardware,"Select router with WPA3",router-specs.png,"Update firmware regularly."
+"Setting up a Home Network",3,Configure the router settings,"Access router settings page",router-config.png,"Default login details can be found in the manual."
+"Setting up a Home Network",4,Set up a strong passphrase,"Create a new network passphrase",passphrase-setup.png,"Use a combination of letters, numbers, and symbols."
+"Configuring a Web Server",1,Choose your server software,"Install Apache or Nginx","server-software-choice.png","Research the benefits of each option."
+"Configuring a Web Server",2,Secure the server,"Apply security best practices","server-security.png","Refer to the official security guides."
+"Configuring a Web Server",3,Deploy your website,"Upload website files","website-deployment.png","Use secure transfer methods like SFTP."
+"Configuring a Web Server",4,Test the server,"Run a local test of the website","server-testing.png","Check for broken links and loading issues."
+"Programming with Python",1,Set up your development environment,"Install Python and an IDE","ide-setup.png","Choose an IDE that suits your workflow."
+"Programming with Python",2,Write a simple script,"Create 'hello_world.py'","script-writing.png","Test running the script in your IDE."
+"Programming with Python",3,Learn basic syntax,"Use online Python resources","syntax-guide.png","Practice with small code snippets."
+"Programming with Python",4,Start a project,"Initialize a new Python project","project-initiation.png","Keep your code organized from the start."

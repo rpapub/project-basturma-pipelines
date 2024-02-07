@@ -1,0 +1,10 @@
+id,category,checklistname,key,value,remark,component
+148,,Sample Checklist,all noise sources,switched off,,
+149,,Sample Checklist,sound from the outside coming in,minimized,,
+150,,Sample Checklist,listening,with headphones (maybe in-ear),,
+151,,Sample Checklist,computer keyboard,silent,,
+152,,Sample Checklist,microphone placement and keyboard location,as per (cardioid?) pattern,,
+153,,Sample Checklist,behind the microphone,something absorbant,,
+154,,Sample Checklist,onboard soundcard,do not use,,
+155,,Sample Checklist,noise cancellation,used with care,,
+156,,Sample Checklist,microphone technique,closeness vs. amplification,,

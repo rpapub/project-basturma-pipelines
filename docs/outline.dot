@@ -1,0 +1,16 @@
+digraph Outline {
+rankdir=TB;
+node [shape=box];
+"1" [label="homelab"];
+"2" [label="Setting up a Home Lab for R&D"];
+"3" [label="Step-by-step guides"];
+"9" [label="foo"];
+"10" [label="bar"];
+"4" [label="Checklists"];
+"5" [label="Bill-of-materials"];
+"6" [label="Implementing and Optimizing CI/CD Pipelines"];
+"7" [label="Source code"];
+"8" [label="Step-by-step guides"];
+"1" -> "2";
+"3" -> "9";
+"9" -> "10";
