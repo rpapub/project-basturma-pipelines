@@ -6,3 +6,4 @@ docs/_site
 bootstrap-5.3.2-examples
 .vale.ini
 docs/vale-styles
+vendor
